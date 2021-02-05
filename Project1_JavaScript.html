@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project 1 - JavaScript</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CITS3403 Project 1">
+    <meta name="author" content="Craig Ian Bond Huggins">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Exo+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Project1_CSS.css">
+    <script type='text/javascript' src='config.js'></script>
+    <script src="Project1_JS.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Links -->
+    <ul class="navigation">
+        <li class="navigation"><a href="Project1_HTML.html">HTML</a></li>
+        <li class="navigation"><a href="Project1_CSS.html">CSS</a></li>
+        <li class="navigation"><a class="active" href="#">JavaScript</a></li>
+        <li class="navigation"><a href="Project1_Biography.html">Biography</a></li>
+        <li class="navigation"><a href="Project1_References.html">References</a></li>
+    </ul>
+
+    <!-- Container to make the headline wider than the rest of the page -->
+    <div class="container">
+        <h1 class = "really-big">JavaScript</h1>
+        <h2 class = "headline">The purpose of Javascript in Web Applications</h2>
+    </div>
+    <br>
+
+    <!-- wrapper used to center content of page with a max width -->
+    <div class="wrapper">
+        <div id="table_of_contents">
+            <h3 class="sub-heading">Table of Contents</h3>
+            <ol class="contents">
+                <li><a href="#introduction">Intro</a></li>
+                <li><a href="#dom_manipulation">Dynamic DOM</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#AJAX">Ajax</a></li>
+            </ol>
+        </div>
+        <br>
+
+        <!-- Introduction to Javascript -->
+        <div id="introduction">
+            <h3 class="sub-heading">Introduction</h3>
+            <p>
+                Javascript is the primary programming language for websites. It provides enhanced interactivity, and transforms websites from static pages displaying information, to dynamic pages allowing the page to be altered in real time, without editing the base HTML code.
+            </p>
+        </div>
+
+        <!-- Document Object Model description -->
+        <div id="dom_manipulation">
+            <h3 class="sub-heading">DOM Manipulation</h3>
+            <p>
+                The 'Document Object Model' (DOM) maps elements in a web page as objects when the web page is loaded. As an object, the element is able to be manipulated through Javascript.
+            </p>
+
+            <!-- Will be hidden upon DOM Manipulation button being clicked -->
+            <p id="to_be_hidden">
+                <strong>Please click the button below to execute some DOM Manipulation</strong><br>
+                <button onclick="Example1_Function()" style="margin-top: 5px;">Click to change</button>
+            </p>
+            
+            <!-- Standard Example Box that's class will change with DOM Manipulation -->
+            <div class="example_long" id="JS_Example_1">
+                <div class="example-left">
+                    <span>Example</span>
+                </div>
+                <div class="example-right" id="JS_Example_1_Right">
+                    <p>
+                        This is the same long example box seen on other pages. Using Javascript and the DOM, we are going to change it
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Buttons to add more generic element objects to the Example Box -->
+            <div id="adding_to_Example_Generic" style="margin-bottom: 30px; margin-top: 20px;" hidden>
+                <p>Use the following two buttons to add and delete some new generic text nodes to the example box:</p>
+                <button onclick="addChildrenToExample()" class="add" id="addToExample_Generic">Add some <br> generic text</button>
+                <button onclick="removeChildrenFromExample()" class="delete" id="removeFromExample_Generic">Delete some <br> text items</button>
+            </div>
+
+            <!-- Allows user to add their own content to the Example Box -->
+            <div id="adding_to_Example_Specific" style="margin-bottom: 30px; margin-top: 30px;" hidden>
+                <p>Use this text box to add your own content to the example box</p>
+                <textarea id="text_to_example" placeholder="Enter some text here to add it to the example" rows="3" cols="50"></textarea><br>
+                <button onclick="addSpecificChildToExample()" class="add" id="addToExample_Specific">Add text<br>to example</button>
+            </div>
+
+            <!-- Deletes a paragraph chosen by the user -->
+            <div id="delete_from_Example_Specific" style="margin-bottom: 30px; margin-top: 30px;" hidden>
+                <p>Enter the number of a paragraph you'd like to delete (starting from 1, in the order they appear)</p>
+                <label for="deletion_input">Paragraph: </label>
+                <input type="text" class="inputValue" id="deletion_input" style="width: 240px;" placeholder="Enter a paragraph number to delete"><br>
+                <button onclick="removeSpecificChildFromExample()" class="delete" id="removeChildFromExample" style="margin-top: 10px;">Delete specific <br>paragraph number</button>
+            </div>
+            <br>
+
+            <div id="dom_explanation_1" class="dom_explanation" hidden>
+                <p>
+                    The DOM method <span class="Example_Text">document.getElementById()</span> is used to access element's by their 'id', where they can then be assigned to variables for manipulation. <br>
+                    The 'Add' button functions do the following:
+                </p>
+                <ul>
+                    <li>Create new Paragraph elements via the createElement() method</li>
+                    <li>Create new Text Nodes by the createTextNode() method</li>
+                    <li>Append the Text Nodes to the newly created paragraph element using the appendChild() method</li>
+                    <li>Append the paragraph element as a child to the parent 'Example' &lt;Div&gt; element</li>
+                </ul>
+            </div>
+
+            <div id="dom_explanation_2" class="dom_explanation" hidden>
+                <p>
+                    When the user enters their own text to add, the value of that text box is retrieved using <span class="Example_Text">document.getElementById().value</span> and is assigned to the variable <span class="Example_Text">example_new_text</span> <br>
+                    This variable is used as the argument for the createTextNode method via <span class="Example_Text">document.createTextNode(example_new_text).</span>
+                </p>
+            </div>
+
+            <div id="dom_explanation_3" class="dom_explanation" hidden>
+                <p>
+                    The 'Delete' button functions do the following:
+                </p>
+                <ul>
+                    <li>Use the removeChild() method on the parent Example Box element</li>
+                    <li>The first delete function finds and removes the last element in the parent element's child nodes collection with <span class="Example_Text"> [parent.children.length - 1] </span></li>
+                    <li>The second delete function finds the correct child to remove by the number entered, and uses that number as the index value of the parent element's collection of child nodes</li>
+                    <li style="list-style-type: none;"><span class="Example_Text">y = parent.children[paragraph_number]<br>
+                        parent.removeChild(y)</span></li>
+                </ul>
+            </div>
+
+        <!-- Section to demonstrate use of Javascript in forms -->
+        <div id="forms">
+            <div class="container-fluid">
+                <h3 class="sub-heading">Forms in Javascript</h3>
+                <p>
+                    A useful function of Javascript is to validate Form data within the browser. It prevents unnecessary use of server resources, as validation is handled before it is sent to a web server.
+                </p>
+                <div class="example" id="JS_Example_2" style="width:fit-content; float:left; margin-right: 20px; margin-bottom: 20px; margin-top: 10px;">
+                    <div class="example-right">
+                        <form name="JS_form" onsubmit="validateForm();return false" method="POST">
+                            <label for="fname">First name:</label><br>
+                            <input type="text" id="fname" name="fname"><br>
+                            <label for="lname">Last name:</label><br>
+                            <input type="text" id="lname" name="lname"><br>
+                            <label for="email">Email:</label><br>
+                            <input type="email" id="email" name="email"><br>
+                            <label for="birthday">Birthday:</label><br>
+                            <input type="date" id="birthday" name="birthday" placeholder="mm/dd/yyyy" required><br>
+                            <input type="submit" value="Submit">
+                            <input type="reset"> <!-- reset the form -->
+                        </form>
+                    </div>
+                </div>
+                <!-- This is a success message that initially holds no HTML text content (empty paragraph tags). The innerHTML properties are changed and text is added upon the submission of the form and the validateForm() function executed -->
+                <div style="margin-top: 2.00em;">
+                    <p class="success" id="success" style="color: forestgreen; font-weight: bold;"></p>
+                    <p class="summary" id="summary"></p>
+                </div>
+            </div>
+            <p>
+                The behind the scenes Javascript is preventing the form being submitted if certain conditions aren't met.
+                The name boxes require that only letters can be entered, and the box cannot be left empty. The email input ensures that it contains both .(dot) and @ symbols, and that there are enough characters before and after both symbols. The birthday input requires that a valid date is entered in the correct format, and that the birthdate provided is in the past. 
+            </p>
+        </div>
+        <br>
+
+        <!-- Section demonstrating AJAX and JSON -->
+        <div id="AJAX">
+            <h3 class="sub-heading">Ajax</h3>
+            <p>
+                AJAX is a client side web development tool to create asynchronous web applications, where data is requested and received from a web server. This exchange of data occurs in the background, without interrupting the behaviour of the web page.
+            </p>
+            <p>
+                This example will retrieve the current weather for any city. Please enter a city name into the search box below to start.
+            </p>
+
+            <!-- The value provided by the user in this input box is subsituted into the API Fetch URL to retrieve the data -->
+            <div class="input" style="text-align: center;">
+                <input type="text" class="inputValue" id="weather_input" placeholder="Enter a city"><br>
+                <input type="button" value="Get Weather" class="button" id="weather_Button" style="margin-top: 5px;">
+            </div>
+
+            <div class = "weather_display">
+                <div class = "weather_box_header">
+                    <p>Weather Display</p>
+                </div>
+                <!-- The inner display contains the elements, but the innerHTML property is currently empty. It will be set later when the function is executed by Weather Button click -->
+                <div class = "weather_inner_display">
+                    <h3 id = "name"></h3>
+                    <p id = "statement"></p>
+                    <img id = "weather_icon" src="" alt="Weather Icon" hidden>
+                    <p id = "desc"></p>
+                    <p id = "temp"></p>
+                    <p id = "local_time"></p>
+                    <p id = "timezone"></p>
+                    <p id = "advice"></p>
+                </div>
+            </div>
+            <p>
+                In this example, a function is executed when the user clicks on the 'Get Weather' button. 
+                This function calls the fetch() API to request data from the url:
+                <span class="Example_Text">
+                    api.openweathermap.org/data/2.5/weather?q={city name}&appid={your api key}
+                </span><br>
+                Where {city name} is the value entered into the search box, and {your api key} is the unique identifier used to authenticate the calling program to the API. Full details of the Open Weather Map API can be found here:
+                <a href="https://openweathermap.org" class="in_text" target="_blank">https://openweathermap.org</a>
+            </p>
+            <br>
+
+            <!-- Polaroid style container for the image -->
+            <div class="polaroid" style="float: right; margin-left: 30px;">
+                <img src="images/json_data.png" alt="JSON Weather Data" style="width:100%">
+                <div class="polaroid_container">
+                    <p>JSON Data</p>
+                </div>
+            </div>
+            <p>
+                The url responds and we receive an object, which is converted into the JSON format, providing nicely structured data. JSON objects are written as key/value pairs, so the data can be accessed using bracket notation (like accessing properties of a regular Javascript object) and then assigned to variables for use in the Document Object Model. <br>For example, in the JS code, the temperate was accessed and assigned with: 
+                <span class="Example_Text">
+                    var tempValue = data['main']['temp'];
+                </span><br>
+                and then the 'tempValue' variable value was used as the DOM innerHTML property for the corresponding <strong>Temperature</strong> paragraph element.
+            </p>
+        </div>
+    </div>
+    </div>
+    <br><br><br>
+
+    <div class="footer">
+        <p>Written by: Craig Ian Bond Huggins - 22204675</p>
+    </div>
+
+</body>
+</html>

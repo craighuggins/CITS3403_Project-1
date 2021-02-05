@@ -1,0 +1,351 @@
+body {
+    background-color: #F7F9F9;
+    font-family: 'Exo 2', sans-serif;
+}
+
+/* The spacing between input boxes in forms */
+form input {
+    margin-bottom: 1.5em;
+}
+
+/* Giving name, email, and date input boxes an equal fixed width */
+form input[type="text"], [type="email"], [type="date"] {
+    width: 220px;
+}
+
+/* Sets a maximum width for page content */
+.wrapper {
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.really-big {
+    font-size: 5em;
+    text-align: center;
+}
+
+.headline {
+    font-size: 2em;
+    text-align: center;
+}
+
+.sub-heading {
+    font-weight: bold;
+    margin-top: 2.00em;
+}
+
+p {
+    font-size: 1.25em;
+    line-height: 1.5;
+}
+
+a:hover, a:active {
+    color: #09c;
+    text-decoration: none;
+}
+
+h4 {
+    text-decoration: underline;
+}
+
+/* sets in-text links to be orange */
+a.in_text {
+    color: coral;
+}
+
+a.in_text:hover {
+    text-decoration: underline;
+}
+
+table {
+    table-layout: fixed;
+    float:inline-end;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1.10em;
+}
+
+th.table_content{
+    height: auto;
+    width: auto;
+    text-align: center;
+}
+
+th.table_nav {
+    width: 150px;
+    text-align: center;
+}
+
+tr {
+    text-align: center;
+}
+
+td.nav {
+    height: auto;
+    font-size: 10;
+}
+
+td.content {
+    text-align: left;
+}
+
+/* unordered lists featured within the main text paragraphs */
+ul.in_text {
+    list-style-type: square;
+    font-size: 1.20em;
+}
+
+/* ordered list for table of contents */
+ol.contents {
+    font-size: 1.25em;
+}
+
+/* Navigation bar at top of the page */
+ul.navigation {
+    top: 0;
+    height: 45px;
+    width: auto;
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: #212121;
+    border: 1px solid #e7e7e7;
+}
+
+li.navigation {
+    float: left;
+    border-right: none;
+}
+
+li.navigation:last-child {
+    border-right: none;  /* Do not add a right border to the last item */
+}
+
+/* Links in the Navigation Bar */
+li.navigation a {
+    display: block;
+    color: #BDBDBD;
+    text-align: center;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 110%;
+}
+
+/* Text effects for mouse hover over navigation links */
+li.navigation a:hover, a:active {
+    color: white;
+    text-shadow: 0 0 5px aqua;
+    background-color: rgba(64, 64, 64, 0.76);
+}
+
+/* Colour effects to make current tab stand out */
+li.navigation a.active {
+    background-color: rgba(0, 51, 204, 0.89);
+    color: white;
+}
+
+/* Special text used for code demonstration */
+.Example_Text {
+    display: inline-block;
+    color: coral;
+    font-size: 0.90em;
+    line-height: normal;
+}
+
+/* Text that stands out to demonstrate correct syntax */
+span.In_Text {
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: block;
+    color: blue;
+    font-size: larger;
+    text-align: center;
+}
+
+/* Class for large square-shaped example boxes */
+.example {
+    box-shadow: 5px 10px 8px 8px rgba(17, 17, 17, .06);
+    background-color: white;
+    display: flex;
+    width: 40%;
+    height: auto;
+    border: 1px solid #eee;
+    border-radius: 15px 15px 15px 15px;
+    border-left:.25em solid coral;
+    margin-left: 25px;
+    margin-top: -15px;
+}
+
+/* Class for longer rectangular-shaped boxes for examples in between paragraphs */
+.example_long {
+    box-shadow: 0 6px 10px 0 rgba(17, 17, 17, .06);
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    margin-top: 1.5em;
+    margin-bottom: 4.5em;
+    border: 1px solid #eee;
+    border-left:.25em solid coral;
+}
+
+/* The dark example box used in the CSS Page example */
+#dark {
+    box-shadow: 0 6px 10px 0 rgba(255, 127, 80, 0.555);
+    background-color: #474444;
+    color: #eee;
+}
+
+/* Left-hand side of example box */
+.example-left {
+    padding: 1.5em 1.5em 1.5em 1.75em;
+}
+
+.example-left span {
+    margin: 0 0 1.75em;
+    line-height: 1.5;
+    display: block;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+/* Main content of example box */
+.example-right {
+    align-self: center;
+    flex: 1 1 auto;
+    padding: 1.0em 1.0em 1.0em 1.0em;
+}
+
+/* Text in the example box, slightly smaller than the rest of the site */
+.example-right p {
+    font-size: 1.20em;
+    line-height: 1.25;
+}
+
+/* 'Polaroid' style box for images */
+div.polaroid {
+    width: 40%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+}
+
+div.polaroid_container {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+/* Box that displays API Weather Information */
+div.weather_display {
+    width: 60%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    margin: 0 auto;
+    height: 380px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+/* Inner contents of weather box */
+div.weather_inner_display {
+    text-align: justify;
+    margin-left: 30px;
+}
+
+/* Weather box title */
+div.weather_box_header {
+    width: 100%;
+    height: 10%;
+    background-color: black;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+/* The input box where the user searches for a city */
+#weather_input {
+    margin-top: 10px;
+    height: 60px;
+    width: 300px;
+    border-radius: 5px;
+    font-size: 20px;
+    padding-left: 10px;
+    font-size: 1.5em;
+    outline: none;
+}
+
+/* Effects when the user clicks inside the search box */
+#weather_input:focus {
+    box-shadow: 0 0 8px 1px rgba(92, 222, 255, 0.747);
+    border: 1px solid #d9dce5;    
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+#weather_Button {
+    height: 50px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+}
+
+/* Footer found on every page containing the authors name */
+div.footer {
+    margin-top: 30px;
+    background-color: #212121;
+    height: 35px;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Footer text */
+.footer p {
+    color: white;
+    font-size: 1.00em;
+    line-height: 35px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+/* Sections of the CV */
+div.bio_section {
+    border-top: 2px solid #212121;
+    border-bottom: 2px solid #212121;
+    margin-bottom: 50px;
+}
+
+/* Picture of the website author */
+#bio_picture {
+    float: right; 
+    width: 20%; 
+    height: 20%;
+    margin-left: 20px;
+    border-radius: 50%;
+    margin-top: -20px;
+}
+
+/* Style for Add buttons */
+.add {
+    background-color: rgba(7, 192, 7, 0.712);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Style for Delete buttons */
+.delete {
+    background-color: rgba(255, 0, 0, 0.712);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.dom_explanation li {
+    font-size: 1.18em;
+}

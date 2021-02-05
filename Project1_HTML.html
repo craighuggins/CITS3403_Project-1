@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project 1 - HTML</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CITS3403 Project 1">
+    <meta name="author" content="Craig Ian Bond Huggins">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Exo+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Project1_CSS.css">
+</head>
+
+<body>
+    <!-- Navigation Links -->
+    <ul class="navigation">
+        <li class="navigation"><a class="active" href="#">HTML</a></li>
+        <li class="navigation"><a href="Project1_CSS.html">CSS</a></li>
+        <li class="navigation"><a href="Project1_JavaScript.html">JavaScript</a></li>
+        <li class="navigation"><a href="Project1_Biography.html">Biography</a></li>
+        <li class="navigation"><a href="Project1_References.html">References</a></li>
+    </ul>
+
+    <!-- Container to make the headline wider than the rest of the page -->
+    <div class="container">
+        <h1 class = "really-big">HTML</h1>
+        <h2 class = "headline">The History and Fundamentals of the Hypertext Markup Language</h2>
+    </div>
+    <br>
+
+    <!-- wrapper used to center content of page with a max width -->
+    <div class="wrapper">
+        <div id="table_of_contents">
+            <h3 class="sub-heading">Table of Contents</h3>
+            <ol class="contents">
+                <li><a href="#history">History</a></li>
+                <li><a href="#structure">Structure</a></li>
+            </ol>
+        </div>
+        
+        <!-- Section detailing the history of HTML -->
+        <div id="history">
+            <h3 class="sub-heading">History</h3>
+            <p>
+                HTML stands for 'Hypertext Markup Language’ and is the standard language for documents displayed in a web browser. In its early stages, the internet was designed to distribute information across a noncentralized network of computers in times of emergency. Thus, the original tools for finding and viewing information on the internet were unsophisticated. In the early 1990’s, the number of organizations and people utilizing the internet was growing at a rapid rate, hence the need for easier access to resources and an enhanced display of the information.
+                <br><br>
+                HTML was invented by Tim Berners-Lee, a contractor at <abbr title="The European Organization for Nuclear Research">CERN</abbr> when he proposed an Internet-based hypertext system for researchers to use and share documents. Berners-Lee wrote the software in late 1990.
+            </p>
+            <br>
+            <!-- table containing HTML Version history -->
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="table_nav">HTML Versions</th>
+                        <th class="table_nav">Release Date</th>
+                        <th class="table_content">Developments</th> 
+                    </tr>
+                </thead>
+                    <tr>
+                        <td class="nav">1.0</td>
+                        <td class="nav">1993</td>
+                        <td class="content">
+                            The first official version didn't have many features, other than getting some simple text onto the web.
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="nav">2.0</td>
+                        <td class="nav">1995</td>
+                        <td class="content"> 
+                            Introduced the general structure of an overarching &lt;HTML&gt; element containing the two main components &lt;HEAD&gt; and &lt;BODY&gt; (see the <a href="#structure" class="in_text">structure</a> section for details), which was retained in all future versions.
+                            This version added key features such as structural elements for paragraphs, headings, ordered and unordered lists, as well as support for forms that allowed users to input and submit data.
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="nav">3.2</td>
+                        <td class="nav">1997</td>
+                        <td class="content"> 
+                            Supported new features such as text-flow around images, image maps, and tables. Greater control of layout was provided via the &lt;DIV&gt; element and class attribute, which allowed a page to be easily separated into different sections.
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="nav">4.01</td>
+                        <td class="nav">1999</td>
+                        <td class="content"> 
+                            Presentational features from HTML 3.2 were deprecated in favour of separate stylesheets, encouraging the separation of a documents structure from its presentation (see the <a href="Project1_CSS.html" class="in_text">CSS</a> page for details).
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="nav">5.0</td>
+                        <td class="nav">2014</td>
+                        <td class="content">
+                            HTML5 added several new elements for explicit representation of structure in documents: &lt;section&gt;, &lt;main&gt;, &lt;article&gt;, &lt;aside&gt;, &lt;header&gt;, and &lt;footer&gt;. <br>
+                            The formerly used Adobe plug-in for video was dropped in favour of new &lt;audio&gt; and &lt;video&gt; elements,  which removed the need for format-specific plug-ins, providing consistent player functions independent of browser platform. <br>
+                            Many new API's were made available for creating interactive applications.
+                        </td>
+                    </tr>
+            </table>
+        </div>
+        <br>
+
+        <!-- Section detailing the structure of HTML Pages -->
+        <div id="structure">
+            <h3 class="sub-heading">Structure</h3>
+                <!-- An example to demonstrate HTML Structure -->
+                <div class="example" style="float:right;">
+                    <div class="example-right">
+                        <p>
+                            &lt;html&gt;<br>
+                            <span class="Example_Text">
+                                The language of the page may be declared here (optional) <br>
+                                &lt;html lang="en"&gt; defines this page to be in English
+                            </span>
+                            <br>
+                                &lt;head&gt;<br>
+                            <span class="Example_Text">
+                                &lt;title&gt; The document title<br>
+                                &lt;style&gt; Style information for the current page<br>
+                                &lt;meta&gt; Document data (not visible) such as description, keywords, author<br>
+                                &lt;link&gt; Links to external stylesheets<br>
+                                &lt;script&gt; Defines client-side Javascript, either through scripting statements or an external script file<br>
+                            </span>
+                            <br>
+                            &lt;/head&gt;<br>
+                            &lt;body&gt;<br>
+                            <span class="Example_Text">
+                                &lt;h1,h2,h3,h4,h5,h6&gt; Page Headers<br>
+                                &lt;p&gt; Body of Text<br>
+                                &lt;div&gt; New section<br>
+                                &lt;ol&gt; or &lt;ul&gt; Ordered or un-ordered lists<br>
+                                &lt;table&gt; Organised data<br>
+                                &lt;img&gt; Graphics<br>
+                                &lt;form&gt; Capture user input<br>
+                            </span>
+                            <br>
+                            &lt;/body&gt;<br>
+                            &lt;/html&gt;<br>
+                        </p>
+                    </div>
+                </div>
+                <p>  
+                    All HTML Pages have the same basic structure, as can be seen in the example to the right. The structure is defined by a series of elements which tell the browser how to display the content. Elements are represented by tags, each of which has an opening and corresponding closing tag. Every HTML document has a root HTML node &lt;html&gt;, and two child nodes &lt;head&gt; and &lt;body&gt;.
+                </p>
+                <p>
+                    Inside the head section, metadata is defined for the HTML document. This data is not displayed by the browser, but defines important information for the page to run.
+                    For example, a page title is added using the &lt;title&gt; tag. To see the title of this page, 
+                    look at the current tab in your browser. Style sheets and Scripts are added here too, either internally or linked externally.
+                </p>
+                <p>
+                    The &lt;body&gt; section of the web-page contains all content that is visible to the user of the website. This content is delivered via HTML elements:
+                </p>
+
+                <!-- Paragraph element description -->
+                <h4 class="sub-heading">Paragraphs</h4>
+                <p>
+                    Used to display blocks of text on a page. For example, all of this text is considered a paragraph.
+                </p>
+
+                <!-- Header element description -->
+                <h4 class="sub-heading">Headers</h4>
+                <p>
+                    Headers are used to give a document structure. Users will skim read pages via its headings. The words <em><u>Paragraphs</u></em> and <em><u>Headers</u></em> are headers.
+                </p>
+
+                <!-- Table element description -->
+                <h4 class="sub-heading">Tables</h4>
+                <p>
+                    Tables are used to display sets of data on a page. They consist of Headers (&lt;th&gt;), Rows (&lt;tr&gt;), and Data cells (&lt;td&gt;). An example can be found in the <a href="#history" class="in_text">history</a> section of this page.
+                </p>
+
+                <!-- List element description -->
+                <h4 class="sub-heading">Lists</h4>
+                <p>
+                    A list is a collection of items that may have no specific order, (&lt;ul&gt;), or a numbered sequence (&lt;ol&gt;). An example of an ordered list can be found in the <a href="#table_of_contents" class="in_text">Table of Contents</a> on each page.
+                </p>
+
+                <!-- Div element description -->
+                <h4 class="sub-heading">Div</h4>
+                <p>
+                    The div tag is used to divide a document into sections. It is useful for laying out a webpage, and as a container to group html elements to style or perform specific tasks with via Javascript.<br>
+                    For example:
+                </p>
+                <!-- Div element example -->
+                <div>
+                    <div style="width: 48%; float: left; border: 1px dashed black; border-radius: 5px;">
+                        <p style="text-align: center;">
+                            This div element is independent of the div element to the right, but belongs to the same containing div.
+                        </p>
+                    </div>
+                    <div style="width: 48%; float: right; border: 1px dashed black; border-radius: 5px;">
+                        <p style="text-align: center;">
+                            This div element is independent of the div element to the left, but belongs to the same containing div.
+                        </p>
+                    </div>
+                </div>
+                <br><br>
+                
+                <!-- Image element description -->
+                <div class="container-fluid" style="margin-top: 3.00em;">
+                    <h4 class="sub-heading">Images</h4>
+                    <div class="polaroid" style="float: right; margin-left: 30px;">
+                        <a href="https://res.cloudinary.com/tourhq/image/upload/c_fill,fl_progressive,g_auto,h_493,q_auto:best,w_876/ftuxadnfxj2uw0wpcrr4" target="_blank">
+                        <img src="images/austria-mountains.jpeg" alt="Austrian Town Scenery" style="width:100%"></a>
+                        <div class="polaroid_container">
+                            <p>Austria</p>
+                        </div>
+                    </div>
+                    <p>
+                        Images are defined by the &lt;img&gt; tag, and require two attributes: src and alt. 'src' provides the source location for an image, and 'alt' provides text to be displayed in case the image is missing or cannot be loaded.<br>
+                        The image to the right was attached to its containing div element with the code:
+                        <span class="Example_Text">
+                            &lt;img src="images/austria-mountains.jpeg" alt="Austrian Town Scenery"&gt;
+                        </span>
+                        <br>
+                    </p>
+
+                    <!-- Link element description -->
+                    <h4 class="sub-heading">Links</h4>
+                    <p>
+                        Links are fundamental to HTML as it provides navigation between pages. It is defined by the &lt;a&gt; tag, which has an 'href' attribute providing the destination.<br>
+                        For example, the following link will take you to the source website of the image shown on the right:
+                        <a href="https://www.tourhq.com/article/tourhq-mountains-and-cities-of-austria" class="in_text" target="_blank">Mountains and Cities of Austria</a>
+                        <br>
+                    </p>
+                    <p>
+                        Links are not necessarily text-based. HTML elements can also be used as clickable link objects. For example, click on the image to go straight to the original-size source picture.
+                    </p>
+                </div>
+        </div>   
+    </div>
+    <!-- Footer containing the name of the author -->
+    <div class="footer">
+        <p>Written by: Craig Ian Bond Huggins - 22204675</p>
+    </div>
+</body>
+</html>

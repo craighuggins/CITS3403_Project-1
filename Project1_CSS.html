@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project 1 - CSS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CITS3403 Project 1">
+    <meta name="author" content="Craig Ian Bond Huggins">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Exo+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Project1_CSS.css">
+</head>
+
+<body>
+    <!-- Navigation Links -->
+    <ul class="navigation">
+        <li class="navigation"><a href="Project1_HTML.html">HTML</a></li>
+        <li class="navigation"><a class="active" href="#">CSS</a></li>
+        <li class="navigation"><a href="Project1_JavaScript.html">JavaScript</a></li>
+        <li class="navigation"><a href="Project1_Biography.html">Biography</a></li>
+        <li class="navigation"><a href="Project1_References.html">References</a></li>
+    </ul>
+
+    <!-- Container to make the headline wider than the rest of the page -->
+    <div class="container">
+        <h1 class = "really-big">Cascading Style Sheets</h1>
+        <h2 class = "headline">The purpose and motivations of CSS</h2>
+    </div>
+    <br>
+
+    <!-- wrapper used to center content of page with a max width -->
+    <div class="wrapper">
+        <div id="table_of_contents">
+            <h3 class="sub-heading">Table of Contents</h3>
+            <ol class="contents">
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#selectors">Selectors</a></li>
+                <li><a href="#formats">Formats</a></li>
+            </ol>
+        </div>
+        <br>
+
+        <!-- Introduction to CSS Section -->
+        <div id="introduction">
+            <h3 class="sub-heading" id="intro">Introduction</h3>
+            <p>
+                Prior to the availability of Cascading Style Sheets (CSS), all site appearance properties were handled by the HTML code. As sites began to embody a wide variety of styles, the HTML was becoming increasingly complex.  To address this, CSS was introduced as a way to separate style from content. It provided more control to web developers by allowing multiple web pages to share the same formatting through one accompanying CSS document, stored in a separate .css file. This saves a lot of time, and provides advantages in site maintenance. CSS is prominantly used to give websites a uniform appearance theme throughout.
+            </p>
+            <p>
+                The CSS document is a set of declarations that define how elements on the page are to be displayed. The syntax of a declaration block is as follows: 
+                <span class="In_Text">selector { property : value; }</span>
+                Where 'selector' is the element to apply the style to, 'property' is the property we want to change, and 'value' is what we want to change the property to. See below for an <a href="#Example_1" class="in_text">example.</a>
+            </p>
+            <div class="example_long" id="Example_1">
+                <div class="example-left">
+                    <span>Example</span>
+                </div>
+                <div class="example-right">
+                    <p>
+                        Inside the declaration block, you could have as many declarations as you want. For example, this web site has the same font and a constant light background colour on all pages. The rules have been applied to the &lt;body&gt; element, so it covers everything visible to the user: <br>
+                        <span class="Example_Text">
+                            body {
+                                background-color: #F7F9F9;
+                                font-family: 'Exo 2', sans-serif;
+                            }
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CSS Selector Fundamentals -->
+        <div id="selectors">
+            <h3 class="sub-heading">Selectors</h3>
+            <p>
+                The selector can be used for Elements, Classes, ID's, or a combination. This gives great choice as to which elements on a page inherit a particular style. Usually, we want to give certain elements a particular appearance and format, and for this we have <u>class</u> selectors and <u>ID</u> selectors.
+            </p>
+            
+            <!-- CSS Class Description -->
+            <div id="class">
+                <h4 class="sub-heading">Class</h4>
+                <p>
+                    Class selectors are useful for grouping multiple elements together that we want to share format and appearance. Rather than applying the style individually, we group elements by their class, and apply the class inside the element's tag as an attribute. It is declared in CSS by placing a dot before the selector:
+                    <span class="In_Text">.selector { property : value; }</span>
+                </p>
+
+                <div class="example_long" id="Example_2">
+                    <div class="example-left">
+                        <span>Example</span>
+                    </div>
+                    <div class="example-right">
+                        <p>
+                            All of these example boxes are using the same class: example_long <br>
+                            Which specifies the size and shape of the box, the font inside, margins, colour and box shadow. The purpose was to give these boxes separation from the main text content of the page and draw the attention of the user. It has been applied to the element with the syntax: <span class="Example_Text">&lt;div class="example_long" id="Example_2"&gt;</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CSS ID Description -->
+            <div id="id">
+                <h4 class="sub-heading">ID</h4>
+                <p>
+                    ID selectors target elements with a specific ID attribute value. They are useful to giving a single element of the page a unique identity, setting it apart from the rest. It is declared using a hash tag before the element.
+                    <span class="In_Text">#selector { property : value; }</span>
+                </p>
+                <div class="example_long" id="dark">
+                    <div class="example-left">
+                        <span>Example</span>
+                    </div>
+                    <div class="example-right">
+                        <p>
+                            This example box has the same class; example_long; however it has been assigned the ID dark. The dark CSS ID selector has been defined as: 
+                            <span class="Example_Text">#dark {
+                                background-color: #474444;
+                                color: #eee;
+                                }
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CSS Pseudo Class Description -->
+            <div id="pseudo-classes">
+                <h4 class="sub-heading">Pseudo-classes</h4>
+                <p>
+                    Pseudo selectors define an element when it is in a special state, such as when the mouse hovers over it, or the element is in focus. It is useful in links, which can have a different appearance when it has been visited, is currently active, or unvisited. The syntax to use is: 
+                    <span class="In_Text">selector:pseudo-class { property : value; }</span>
+                </p>
+                <div class="example_long" id="Example_4">
+                    <div class="example-left">
+                        <span>Example</span>
+                    </div>
+                    <div class="example-right">
+                        <p>
+                            You will have noticed that links throughout this website change when the mouse hovers over them. The links in-text underline, the table of contents links turn a light blue colour, and the navigation bar links have an aqua glow with white text. These effects have been set through pseudo-classes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CSS Combined Selectors Description -->
+            <div id="combinators">
+                <h4 class="sub-heading">Selector Combinations</h4>
+                <p>
+                    'Combinators' can be used to achieve precise selector behaviour. We can choose to select elements that are inside other elements, such as paragraph elements that are inside a div:
+                    <span class="Example_Text">div p {
+                        background-color: yellow;
+                      }
+                    </span>
+                </p>
+                <div class="example_long" id="Example_5">
+                    <div class="example-left">
+                        <span>Example</span>
+                    </div>
+                    <div class="example-right">
+                        <p>
+                            Looking at the dark-coloured footer on each page, the text colour is white as opposed to black everywhere else. This has been set by defining the &lt;p&gt; element inside the div with class 'footer' to have white font:
+                            <span class="Example_Text">
+                                .footer p {
+                                color: white;
+                            }
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <!-- CSS Formats Description -->
+        <div id="formats">
+            <h3 class="sub-heading">Formats</h3>
+            <p>CSS has 3 different formats:</p>
+                <ul class="in_text">
+                    <li>Inline</li>
+                    <li>Internal</li>
+                    <li>External</li>
+                </ul>
+            
+            <h4 class="sub-heading">Inline</h4>
+            <p>
+                The inline method applies a style directly to an HTML element and is typically avoided for breaking the rule of separating style from content
+            </p>
+            
+            <h4 class="sub-heading">Internal</h4>
+            <p>
+                Internal CSS is placed inside the &lt;style&gt; tags in the &lt;head&gt; section of the HTML document. It will only apply to a single document, so it can be useful to separate one particular page's style from all others.
+            </p>
+            
+            <h4 class="sub-heading">External</h4>
+            <p>
+                External CSS to carry style information over various pages. All style rules are stored in a separate .css file that is linked to in the &lt;head&gt; section of an HTML document.
+            </p>
+            
+            <div class="example_long" id="Example_6">
+                <div class="example-left">
+                    <span>Example</span>
+                </div>
+                <div class="example-right">
+                    <p>
+                        You can see that across this website, all pages have a similar colour scheme, font, and layout. This has been set up through one single external CSS document called 'Project1_CSS.css' which contains all style information, and has been linked on every page.
+                    </p>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <div class="footer">
+        <p>Written by: Craig Ian Bond Huggins - 22204675</p>
+    </div>                   
+</body>
+</html>
