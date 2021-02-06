@@ -2,6 +2,7 @@
 A website demonstrating the use of HTML5, CSS3, and JavaScript
 
 The website consists of 4 pages, each accessible via the navigation bar.
+
 HTML page:
 - Describes a brief history and evolution of the HTML language, as well as the structure of HTML pages with examples.
 
