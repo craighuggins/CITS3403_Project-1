@@ -17,3 +17,5 @@ Javascript page:
   
 Biography page:
 - a brief biography of the author
+
+This website is not currently hosted, but can be accessed by opening one of the HTML pages in a web browser of your choice.
