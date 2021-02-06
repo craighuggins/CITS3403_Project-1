@@ -11,7 +11,7 @@ CSS page:
 
 Javascript page:
 - Describes the purpose and use of Javascript for creating interactive web-sites. Contains sections detailing:
-  - Document Object Model manipulatiion
+  - Document Object Model manipulation
   - Forms, including validation
   - AJAX and API calls
   
